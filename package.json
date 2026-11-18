@@ -1,0 +1,50 @@
+{
+  "name": "mcp-api-colombia",
+  "version": "1.0.0",
+  "description": "Servidor MCP: días hábiles, festivos, vencimientos DIAN por NIT, UVT y TRM de Colombia (vía RapidAPI)",
+  "mcpName": "io.github.TernApp/api-colombia",
+  "type": "module",
+  "bin": {
+    "mcp-api-colombia": "src/stdio.js",
+    "mcp-api-colombia-http": "src/http.js"
+  },
+  "main": "src/servidor.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "scripts": {
+    "start": "node src/stdio.js",
+    "start:http": "node src/http.js",
+    "test": "node --test test/*.test.js",
+    "configurar": "node scripts/configurar.mjs",
+    "version": "node scripts/sincronizar-version.mjs && (git add server.json 2>/dev/null || true)"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "colombia",
+    "dian",
+    "festivos",
+    "dias-habiles",
+    "business-days",
+    "holidays",
+    "uvt",
+    "trm",
+    "tax-calendar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TernApp/mcp-api-colombia.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  }
+}
